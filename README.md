@@ -1,6 +1,8 @@
 # napcat_client
 
-一个基于 NapCat WS Server 的轻量NapCat Python SDK
+A sub project born from [KiraAI](https://github.com/xxynet/KiraAI)
+
+基于 NapCat WS Server 的轻量NapCat Python SDK
 
 ## TODO
 
