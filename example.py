@@ -28,16 +28,10 @@ async def main():
     @client.meta_event()
     async def on_meta_message(msg: dict):
         logger.info(f"收到元消息：{msg}")
-        if msg.get("meta_event_type") == "lifecycle":
-            client.login_success = True
-            logger.info("登录成功")
 
     @client.napcat_event()
     async def on_napcat_message(msg: dict):
-        if msg.get("status", "") == "failed":
-            if msg.get("retcode") == 1403:
-                logger.error("invalid token")
-                await client.close()
+        logger.info(f"收到napcat消息：{msg}")
 
     config = {
         "bot_pid": 123456789,
