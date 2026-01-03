@@ -255,14 +255,12 @@ class NapCatWebSocketClient:
     async def send_poke(self, user_id: Union[str, int], group_id: Union[str, int] = None):
         if group_id:
             message_dict = {
-                "user_id": self.self_id,
-                "group_id": group_id,
-                "target_id": user_id
+                "user_id": user_id,
+                "group_id": group_id
             }
         else:
             message_dict = {
-                "user_id": self.self_id,
-                "target_id": user_id
+                "user_id": user_id
             }
         resp = await self.send_action("send_poke", message_dict)
         return resp
